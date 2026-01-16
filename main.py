@@ -2,7 +2,7 @@ from flask import Flask, request
 import requests
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 def trigger_github():
     # URL check kar lein: maliknabeel22347 / TIKTOK-AUTOMATION
