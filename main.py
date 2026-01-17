@@ -17,11 +17,12 @@ def trigger_github():
 
 @app.route('/webhook', methods=['GET'])
 def verify():
-    return request.args.get('hub.challenge', "No challenge"), 200
+    challenge = request.args.get('hub.challenge', "No challenge")
+    return challenge, 200
 
 @app.route('/webhook', methods=['POST'])
 def callback():
-    print("New Video Notification!")
+    print("New Video Notification Received!")
     trigger_github()
     return "OK", 200
 
